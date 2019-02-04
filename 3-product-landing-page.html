@@ -1,0 +1,104 @@
+<header id="header">
+  <div id="logo-container">
+    <img id="header-img" alt="Major League Baseball" src="//www.mlbstatic.com/mlb.com/builds/site-core/f92106dac9829f9903af5fbb600632aa13936d68_1547149022/images/logos/league-on-dark/1.svg">
+  </div>
+  <div id="blank"></div>
+  <nav id="nav-bar">
+    <ul id="nav-list">
+      <li>
+        <a href="#video" class="nav-link">Product</a>
+      </li>
+      <li>
+        <a href="#form" class="nav-link">Pricing</a>
+      </li>    
+      <li>
+        <a href="#form" class="nav-link">Contact</a>
+      </li> 
+    </ul>
+  </nav>
+</header>
+<main>
+  <div id="video-container">
+    <div style="padding:56.25% 0 0 0;position:relative;"><iframe id="video" src="https://player.vimeo.com/video/64430856" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><script src="https://player.vimeo.com/api/player.js"></script></div>
+  </div>
+  <hr>
+  <div id="form-container">
+    <form id="form" action="https://www.freecodecamp.com/email-submit">
+      <p>Handcrafted, home-made baseball bats</p>
+      <input type="email" name="email" id="email" placeholder="type your e-mail adress"><br>
+      <input type="submit" id="submit" name="submit" value="submit">
+    </form>
+  </div>     
+</main>
+<style>
+#header{
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  min-height: 80px;
+  width: 100%;
+  display: flex;
+  background-color: lightgrey;
+  height: 115px;
+  border-bottom: 1px black solid;
+}
+@media(max-with: 700px){
+  #header{
+    scale(0.8);
+  }
+}
+#logo-container{
+  display: flex;
+  margin-left: 10%;
+  float: left;
+  flex-grow: 1;
+}
+#blank{
+  flex-grow:2;
+}
+#header-img{
+  width: 150px;
+  padding: 20px;
+}
+#nav-bar{
+  display:flex;
+  flex-grow: 2;
+  text-align: right;
+}
+#nav-list{
+  list-style-type: none;
+  margin-right: 10%;
+  float: right;
+}
+li{
+  font-size: 2.5em;
+  float: left;
+  margin: 20px 30px;
+}
+li:last-child{
+  margin-right: 0;
+}
+.nav-link{
+  text-decoration: none;
+  color: inherit;
+}
+main{
+  position: relative;
+  top:80px;
+  padding-bottom: 10%;
+}
+#video-container{
+  width: 60%;
+  margin: 5% auto;
+}
+#form-container{
+  text-align: center;
+  font-size: 1.5em;
+}
+#email{
+  background-color: white;
+  height: 2em;
+  width: 50%;
+  border-radius: 0.2em;
+}
+</style>
