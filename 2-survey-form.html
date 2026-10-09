@@ -1,119 +1,151 @@
-<style>
-body{
-  background-color: lightgrey;
-  margin: 0;
-  margin-top: 20px;
-}
-main{
-  background-color: lightgrey;
-  padding-bottom: 15px;
-}
-@media (min-width:700px){
-main{
-	margin: 20px auto;
-	width: 65%;
-    border: 2px solid gray;
-	border-radius: 15px;
-	}
-body{
-	background-color:white;
-}
-}
-hr{
-  width: 80%;
-}
-#title,#description{
-  text-align: center;
-}
-label{
-  display: inline-block;
-  width: 40%;
-  padding: 10px;
-  text-align: right;
-}
-input, select{
-  border: 1px gray solid;
-  border-radius: 15px;
-  padding:4px;
-}
-.radio{
-  border: 0;
-  border-radius: 0;
-  padding: 0;
-}
-#score{
-  display: inline-block;
-  border: none;
-}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Feedback Form</title>
+    <style>
+      body{
+        background-color: lightgrey;
+        margin: 0;
+        margin-top: 20px;
+      }
+      main{
+        background-color: lightgrey;
+        padding-bottom: 15px;
+      }
+      @media (min-width:700px){
+        main{
+          margin: 20px auto;
+          width: 65%;
+          border: 2px solid gray;
+          border-radius: 15px;
+        }
+        body{
+          background-color: white;
+        }
+      }
+      hr{
+        width: 80%;
+      }
+      #title,#description{
+        text-align: center;
+      }
+      label,
+      legend{
+        display: inline-block;
+        width: 40%;
+        padding: 10px;
+        text-align: right;
+      }
+      fieldset{
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+      legend{
+        float: left;
+        box-sizing: content-box;
+      }
+      .choices{
+        display: inline-block;
+        padding-left: 10px;
+      }
+      .choices label{
+        width: auto;
+        padding: 0 10px 0 2px;
+        text-align: left;
+      }
+      input, select{
+        border: 1px gray solid;
+        border-radius: 15px;
+        padding:4px;
+      }
+      .radio,
+      .checkbox{
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+      }
+      .form-actions{
+        padding-left: calc(40% + 24px);
+      }
+      #submit{
+        background: white;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 id="title">Student Feedback Form</h1>
+      <p id="description">
+        This form collects feedback from the course's participants.
+      </p>
+      <hr>
+      <form id="survey-form" method="get">
+        <div class="form-row">
+          <label id="name-label" for="name">Name:</label>
+          <input type="text" name="name" id="name" maxlength="64" placeholder="Your name" autofocus required>
+        </div>
 
-<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-<main>
-  <h1 id="title">Student Feedback Form</h1>
-  <p id="description">
-    This form is created to take feedbacks of course's participants.
-  </p>
-  <hr>
-  <form id="survey-form" method="post">
-    <div class="form-row">
-      <label  id="name-label" for="name">Name:</label>
-     <input pattern="[A-Za-z]{1,32}" type="text" name="name" id="name" placeholder="Samed Kahyaoglu" autofocus required>  
-    </div>
-    
-   <div class="form-row">
-     <label id="email-label" for="email">Email:</label>
-     <input type="email" name="email" id="email" placeholder="example@example.com" required>
-    </div>
-  
- <div class="form-row">
-   <label id="number-label" for="number">Age:</label>
-   <input type="number" min="16" max="40" name="age" id="number" placeholder="23">
- </div>
+        <div class="form-row">
+          <label id="email-label" for="email">Email:</label>
+          <input type="email" name="email" id="email" placeholder="example@example.com" required>
+        </div>
 
-    <div class="form-row">
-      <label id="number-label" for="number">Age:</label>
-      <input type="number" min="16" max="40" name="age" id="number" placeholder="23">   
-    </div>
-    
-    <div class="form-row">
-      <label id="lang-label" for="dropdown">Language:</label>
-    <select id="dropdown">
-        <option value="volvo">English</option>
-        <option value="saab">Turkish</option>
-      </select>
-    </div>
-    
-    <div class="form-row">
-      <label for="score">Could you score the course?</label>
-      <fieldset id="score">
-        1<input value="1" type="radio" name="score" class="radio">
-        <input value="2" type="radio" name="score" class="radio">
-        <input value="3" type="radio" name="score" class="radio">
-        <input value="4" type="radio" name="score" class="radio">
-        <input value="5" type="radio" name="score" class="radio">5
-      </fieldset>
-    </div>
-    
-    <div class="form-row">
-      <label for="lectures">Which lectures did you participate?</label>
-      <div style="padding-left: 10px; display: inline-block;">
-      1<input value="1" type="checkbox" name="1">
-      2<input value="2" type="checkbox" name="2">
-      3<input value="3" type="checkbox" name="3">
-      4<input value="4" type="checkbox" name="4"></div>
-    </div>
-      
-      <div class="form-row">
-        <label for="comment">Comments:</label>
-        <textarea rows="5"></textarea>
-      </div>
-    
-      <div class="form-row">
-        <label for="sumbit"></label>
-        <input style="background:white; padding:10px" type="submit" id="submit" value="Submit">
-    
-    
-    
-  </form>
-</main>
+        <div class="form-row">
+          <label id="number-label" for="number">Age:</label>
+          <input type="number" min="16" max="40" name="age" id="number" placeholder="23">
+        </div>
 
+        <div class="form-row">
+          <label id="lang-label" for="dropdown">Language:</label>
+          <select id="dropdown" name="language">
+            <option value="english">English</option>
+            <option value="turkish">Turkish</option>
+          </select>
+        </div>
+
+        <fieldset class="form-row" id="score">
+          <legend>Could you score the course?</legend>
+          <div class="choices">
+            <input value="1" type="radio" name="score" id="score-1" class="radio">
+            <label for="score-1">1</label>
+            <input value="2" type="radio" name="score" id="score-2" class="radio">
+            <label for="score-2">2</label>
+            <input value="3" type="radio" name="score" id="score-3" class="radio">
+            <label for="score-3">3</label>
+            <input value="4" type="radio" name="score" id="score-4" class="radio">
+            <label for="score-4">4</label>
+            <input value="5" type="radio" name="score" id="score-5" class="radio">
+            <label for="score-5">5</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-row" id="lectures">
+          <legend>Which lectures did you participate in?</legend>
+          <div class="choices">
+            <input value="yes" type="checkbox" name="lecture-1" id="lecture-1" class="checkbox">
+            <label for="lecture-1">1</label>
+            <input value="yes" type="checkbox" name="lecture-2" id="lecture-2" class="checkbox">
+            <label for="lecture-2">2</label>
+            <input value="yes" type="checkbox" name="lecture-3" id="lecture-3" class="checkbox">
+            <label for="lecture-3">3</label>
+            <input value="yes" type="checkbox" name="lecture-4" id="lecture-4" class="checkbox">
+            <label for="lecture-4">4</label>
+          </div>
+        </fieldset>
+
+        <div class="form-row">
+          <label for="comment">Comments:</label>
+          <textarea rows="5" id="comment" name="comment"></textarea>
+        </div>
+
+        <div class="form-row form-actions">
+          <button type="submit" id="submit">Submit</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
